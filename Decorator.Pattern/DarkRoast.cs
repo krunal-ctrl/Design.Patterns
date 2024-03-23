@@ -4,7 +4,7 @@ public class DarkRoast : Beverage
 {
     public DarkRoast()
     {
-        Description = "Dark Roast";
+        Description = "Dark Roast Coffee";
     }
     public override double Cost()
     {
