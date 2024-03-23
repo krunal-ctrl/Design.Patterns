@@ -1,18 +1,13 @@
 ﻿namespace Decorator.Pattern.Condiments;
 
-public class Mocha: CondimentDecorator
+public class Mocha(Beverage beverage) : CondimentDecorator
 {
-    public Mocha(Beverage beverage)
-    {
-        this.Beverage = beverage;
-    }
-    public override string GetDescription()
-    {
-        return Beverage.GetDescription() + ", Mocha";
-    }
+    private readonly Beverage _beverage = beverage;
+
+    public override string Description => _beverage.Description + ", Mocha"; 
 
     public override double Cost()
     {
-        return Beverage.Cost() + .20;
+        return _beverage.Cost() + .20;
     }
 }
